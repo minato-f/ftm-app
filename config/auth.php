@@ -109,8 +109,9 @@ return [
             'expire' => 60,
         ],
         'admins' => [
-            'driver' => 'eloquent',
-            'model' => App\Admin::class,
+            'provider' => 'admins',
+            'table' => 'password_resets',
+            'expire' => 60,
         ],
     ],
 

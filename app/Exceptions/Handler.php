@@ -51,6 +51,7 @@ class Handler extends ExceptionHandler
         return parent::render($request, $exception);
     }
     
+
     //追記
     protected function unauthenticated($request, AuthenticationException $exception)
     {

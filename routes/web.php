@@ -37,10 +37,15 @@ Route::get('/', function () { return redirect('/home'); });
 */
 Route::group(['middleware' => 'auth:user'], function() {
     Route::get('/home', 'HomeController@index')->name('home');
-    Route::get('/index', 'User\ThreadsController@index');
+    Route::get('threads/index', 'User\ThreadsController@index');
+    Route::get('threads/create', 'User\ThreadsController@create');
+    Route::get('threads/edit', 'User\ThreadsController@edit');
     
+    Route::get('comments/create', 'User\CommentsController@create');
+    Route::get('comments/edit', 'User\CommentsController@edit');
     
-    
+    Route::get('user/create', 'User\UserController@create');
+    Route::get('user/edit', 'User\UserController@edit');
     
 });
  

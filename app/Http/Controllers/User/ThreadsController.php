@@ -12,5 +12,15 @@ class ThreadsController extends Controller
   {
       return view('user.threads.index');
   }
+  
+   public function create()
+  {
+      return view('user.threads.create');
+  }
+  
+   public function edit()
+  {
+      return view('user.threads.edit');
+  }
     
 }

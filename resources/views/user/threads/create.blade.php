@@ -5,8 +5,6 @@
 {{-- user.blade.phpの@yield('title')に'スレッドの新規作成画面'を埋め込む --}}
 @section('title', 'スレッドの新規作成画面')
 
-<h2>スレッドの新規作成画面</h2>
-
 {{-- user.blade.phpの@yield('content')に以下のタグを埋め込む --}}
 @section('content')
     <div class="container">
@@ -45,7 +43,7 @@
                             </div>
                         </div>
                         {{ csrf_field() }}
-                        <input type="submit" class="btn btn-primary" value="更新">
+                        <input type="submit" class="btn btn-primary" value="投稿">
                     
                     </form>
                 </div>

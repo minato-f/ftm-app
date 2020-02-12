@@ -15,6 +15,10 @@ class CreateCommentsTable extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('user_id'); //投稿者のIDを保存するカラム
+            $table->string('body'); //コメントの本文を保存するカラム
+            
+            
             $table->timestamps();
         });
     }

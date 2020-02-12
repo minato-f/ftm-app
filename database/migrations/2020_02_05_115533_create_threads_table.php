@@ -15,11 +15,11 @@ class CreateThreadsTable extends Migration
     {
         Schema::create('threads', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigIncrements('user_id'); //投稿者のIDを保存するカラム
+            $table->bigInteger('user_id'); //投稿者のIDを保存するカラム
+            $table->bigInteger('threads_id'); //スレッドのIDを保存するカラム
             $table->string('title'); //スレッドのタイトルを保存するカラム
             $table->string('body'); //スレッドの本文を保存するカラム
-            $table->bigIncrements('category_id'); //カテゴリーを保存するカラム
-            $table->string('image_path')->nullable(); //画像のパスを保存するカラム
+            $table->bigInteger('category_id'); //カテゴリーを保存するカラム
             $table->timestamps();
         });
     }

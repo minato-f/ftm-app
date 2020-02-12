@@ -15,6 +15,7 @@ class CreateCategoriesTable extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('category_name'); //カテゴリー名を保存するカラム
             $table->timestamps();
         });
     }

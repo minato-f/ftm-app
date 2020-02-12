@@ -19,6 +19,8 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('introduction')->nullable(); //自己紹介文
+            $table->string('image_path')->nullable(); //画像のパスを保存するカラム
             $table->rememberToken();
             $table->timestamps();
         });

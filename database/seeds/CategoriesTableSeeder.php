@@ -11,6 +11,12 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('categories')->insert([
+            'category_name' => 'mental_treatment',
+            'category_name' => 'physical_treatment',
+            'category_name' => 'work',
+            'category_name' => 'aid',
+            'category_name' => 'other',
+        ]);
     }
 }

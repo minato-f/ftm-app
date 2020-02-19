@@ -40,7 +40,7 @@ Route::group(['middleware' => 'auth:user'], function() {
     Route::get('threads/index', 'User\ThreadsController@index');
     
     Route::get('threads/create', 'User\ThreadsController@add');
-    //Route::post('threads/create', 'User\ThreadsController@create');
+    Route::post('threads/create', 'User\ThreadsController@create');
     
     Route::get('threads/edit', 'User\ThreadsController@edit');
     

@@ -27,15 +27,16 @@ class ThreadsController extends Controller
       
       $thread = new Thread;
       $form = $request->all();
+      //dd($form);
       
       unset($form['_token']);        
       
       //データベースに保存
       $thread->fill($form);
       $thread->user_id = Auth::id();
+     // $thread->category_id = 
       $thread->save();
-      
-      return view('user.threads.create');
+      return redirect ('user.threads.index');
   }
   
     public function index()

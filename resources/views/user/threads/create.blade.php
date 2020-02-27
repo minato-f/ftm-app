@@ -24,7 +24,7 @@
                         
                         <div class="form-group row">
                             <label class="col-md-2">カテゴリー</label>
-                            <select class="col-md-10" id="ategory_id" name="category_id">
+                            <select class="col-md-10" id="ategory_id">
                               <option value="1">メンタルクリニック</option>
                               <option value="2">ホルモン治療・手術</option>
                               <option value="3">仕事・就活</option>

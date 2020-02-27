@@ -12,7 +12,7 @@
                 <div class="col-md-8 mx-auto">
                     <h2>スレッド新規作成</h2>
                     
-                    <form action="{{ action('User\ThreadsController@add') }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ action('User\ThreadsController@create') }}" method="post" enctype="multipart/form-data">
                     
                         @if (count($errors) > 0)
                             <ul>
@@ -21,6 +21,17 @@
                                 @endforeach
                             </ul>
                         @endif
+                        
+                        <div class="form-group row">
+                            <label class="col-md-2">カテゴリー</label>
+                            <select class="col-md-10" id="ategory_id" name="category_id">
+                              <option value="1">メンタルクリニック</option>
+                              <option value="2">ホルモン治療・手術</option>
+                              <option value="3">仕事・就活</option>
+                              <option value="4">妊活</option>
+                              <option value="5">その他</option>
+                            </select>
+                        </div>    
                         
                         <div class="form-group row">
                             <label class="col-md-2">タイトル</label>
@@ -36,12 +47,12 @@
                             </div>
                         </div>
                         
-                        <div class="form-group row">
-                            <label class="col-md-2">画像</label>
-                            <div class="col-md-10">
-                                <input type="file" class="form-control-file" name="image">
-                            </div>
-                        </div>
+                        <!--<div class="form-group row">-->
+                        <!--    <label class="col-md-2">画像</label>-->
+                        <!--    <div class="col-md-10">-->
+                        <!--        <input type="file" class="form-control-file" name="image">-->
+                        <!--    </div>-->
+                        <!--</div>-->
                         {{ csrf_field() }}
                         <input type="submit" class="btn btn-primary" value="投稿">
                     

@@ -11,9 +11,14 @@ class Thread extends Model
      *
      * @var array
      */
-    protected $fillable = [
-        'user_id', 'category_id', 'title', 'body'
-    ];
+     
+    protected $guarded = array('id'); 
+    
+    
+    // protected $fillable = [
+    //     'user_id', 'category_id', 'title', 'body'
+    // ];
+    
     
     public static $rules = array(
         'title' => 'required',

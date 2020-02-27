@@ -36,12 +36,20 @@ class ThreadsController extends Controller
       $thread->user_id = Auth::id();
      // $thread->category_id = 
       $thread->save();
-      return redirect ('user.threads.index');
+      return redirect ('user/threads/index');
   }
   
     public function index()
   {
-      return view('user.threads.index');
+      // $cond_title = $request->cond_title;
+      // if ($cond_title != '') {
+      //     // 検索されたら検索結果を取得する
+      //     $thread = Thread::where('title', $cond_title)->get();
+      // } else {
+      //     // それ以外はすべてのニュースを取得する
+      //     $thread = Thread::all();
+      // }
+      // return view('user.threads.index', ['threads' => $thread, 'cond_title' => $cond_title]);
   }
   
   

@@ -24,12 +24,10 @@
                         
                         <div class="form-group row">
                             <label class="col-md-2">カテゴリー</label>
-                            <select class="col-md-10" id="ategory_id">
-                              <option value="1">メンタルクリニック</option>
-                              <option value="2">ホルモン治療・手術</option>
-                              <option value="3">仕事・就活</option>
-                              <option value="4">妊活</option>
-                              <option value="5">その他</option>
+                            <select class="col-md-10" id="category_id">
+                              @foreach($categories as $category) 
+                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                              @endforeach
                             </select>
                         </div>    
                         

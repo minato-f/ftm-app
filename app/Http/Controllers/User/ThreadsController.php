@@ -8,13 +8,15 @@ use App\Http\Controllers\Controller;
 // 以下を追記することでThread Modelが扱えるようになる
 use App\Thread;
 use Illuminate\Support\Facades\Auth;
+use App\Category;
 
 
 class ThreadsController extends Controller
 {
      public function add()
   {
-      return view('user.threads.create');
+      $categories = Category::all();
+      return view('user.threads.create', ['categories' => $categories]);
   }
     
   

@@ -37,7 +37,7 @@ Route::get('/', function () { return redirect('/home'); });
 */
 Route::group(['middleware' => 'auth:user'], function() {
     Route::get('/home', 'HomeController@index')->name('home');
-    Route::get('threads/index', 'User\ThreadsController@index');
+    Route::get('user/threads/index', 'User\ThreadsController@index');
     
     Route::get('threads/create', 'User\ThreadsController@add');
     Route::post('threads/create', 'User\ThreadsController@create');

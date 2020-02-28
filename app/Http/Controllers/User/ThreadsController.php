@@ -50,6 +50,7 @@ class ThreadsController extends Controller
       //     $thread = Thread::all();
       // }
       // return view('user.threads.index', ['threads' => $thread, 'cond_title' => $cond_title]);
+      return view('user.threads.index');
   }
   
   

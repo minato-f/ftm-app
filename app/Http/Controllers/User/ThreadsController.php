@@ -39,18 +39,18 @@ class ThreadsController extends Controller
       return redirect ('user/threads/index');
   }
   
-    public function index()
+    public function index(Request $request)
   {
-      // $cond_title = $request->cond_title;
-      // if ($cond_title != '') {
-      //     // 検索されたら検索結果を取得する
-      //     $thread = Thread::where('title', $cond_title)->get();
-      // } else {
-      //     // それ以外はすべてのニュースを取得する
-      //     $thread = Thread::all();
-      // }
-      // return view('user.threads.index', ['threads' => $thread, 'cond_title' => $cond_title]);
-      return view('user.threads.index');
+      $cond_title = $request->cond_title;
+      if ($cond_title != '') {
+          // 検索されたら検索結果を取得する
+          $thread = Thread::where('title', $cond_title)->get();
+      } else {
+          // それ以外はすべてのニュースを取得する
+          $thread = Thread::all();
+      }
+      return view('user.threads.index', ['threads' => $thread, 'cond_title' => $cond_title]);
+  
   }
   
   

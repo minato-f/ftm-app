@@ -71,17 +71,23 @@
 
 
 
+
 {{-- 青のカードの部分 --}}
+
 <form action="{{ action('User\ThreadsController@index') }}" method="get">
     @foreach($threads as $thread)  
-<div class="blue-card">    
-  <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
-    <div class="card-header">{{ $thread->category->name }}</div>　
-    <div class="card-body">
-      <h5 class="card-title">{{ \Str::limit($thread->title) }}</h5>
-      <p class="card-name">{{ $thread->user->name }}</p>
-      <p class="card-text">{{ \Str::limit($thread->body) }}</p>
-      <a href="#" class="btn btn-primary" class="float-right">さらに詳しく</a>
+<div class= "row">
+  <div class="col-sm-4">    
+    <div class="blue-card">
+      <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+        <div class="card-header">{{ $thread->category->name }}</div>　
+        <div class="card-body">
+          <h5 class="card-title">{{ \Str::limit($thread->title) }}</h5>
+          <p class="card-name">{{ $thread->user->name }}</p>
+          <p class="card-text">{{ \Str::limit($thread->body) }}</p>
+          <a href="#" class="btn btn-primary" class="float-right">さらに詳しく</a>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -89,24 +95,6 @@
 
 
 
-<!--<form action="{{ action('User\ThreadsController@index') }}" method="get">-->
-<!--<div class="container container-m">-->
-<!--  <div class="card-deck">  -->
-    <!--@foreach($threads as $thread)  -->
-<!--      <div class="card-deck" style="width: 18rem;">-->
-<!--        <div class="card">-->
-<!--          <div class="card-body">-->
-              <!--<h5 class="card-title">{{ \Str::limit($thread->title) }}</h5>-->
-<!--              <h6 class="card-subtitle mb-2 text-muted"></h6>-->
-              <!--<p class="card-text">{{ \Str::limit($thread->body) }}</p>-->
-<!--              <a href="#" class="card-link">Card link</a>-->
-<!--              <a href="#" class="card-link">Another link</a>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-    <!--@endforeach-->
-<!--</div>-->
-<!--</div>-->
 
 {{ csrf_field() }}
 

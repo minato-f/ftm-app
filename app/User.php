@@ -37,7 +37,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
     
-    
+    //モデルの関連付け
     public function threads()
     {
       return $this->hasMany('App\Thread');

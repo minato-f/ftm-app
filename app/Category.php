@@ -15,7 +15,7 @@ class Category extends Model
         'name'
     ];
     
-    //
+    //モデルの関連付け
     public function threads()
     {
       return $this->hasMany('App\Thread');

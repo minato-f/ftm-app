@@ -30,6 +30,8 @@ class CreateThreadsTable extends Migration
      *
      * @return void
      */
+     
+     //モデルの関連付け
     public function down()
     {
         Schema::dropIfExists('threads');

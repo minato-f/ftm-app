@@ -14,4 +14,11 @@ class Category extends Model
     protected $fillable = [
         'name'
     ];
+    
+    //
+    public function threads()
+    {
+      return $this->hasMany('App\Thread');
+    }
+    
 }

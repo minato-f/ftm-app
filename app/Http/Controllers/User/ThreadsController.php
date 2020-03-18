@@ -48,6 +48,7 @@ class ThreadsController extends Controller
       } else {
           // それ以外はすべてのニュースを取得する
           $thread = Thread::all();
+          // $category = Category::all();
       }
       return view('user.threads.index', ['threads' => $thread, 'cond_title' => $cond_title]);
   

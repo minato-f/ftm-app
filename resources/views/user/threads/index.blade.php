@@ -43,9 +43,8 @@
 
 
 {{-- カードの部分 --}}
-  <div class="container container-m">
+<div class="container container-m">
   <div class="card-deck">
-    
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Card title</h5>
@@ -53,8 +52,6 @@
         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
       </div>
     </div>
-    
-    
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Card title</h5>
@@ -69,30 +66,49 @@
         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
       </div>
     </div>
-    
   </div>
-  </div>
+</div>
 
+
+
+{{-- 青のカードの部分 --}}
 <form action="{{ action('User\ThreadsController@index') }}" method="get">
-<div class="container container-m">
-  <div class="card-deck">  
     @foreach($threads as $thread)  
-      <div class="card-deck" style="width: 18rem;">
-        <div class="card">
-          <div class="card-body">
-              <h5 class="card-title">{{ \Str::limit($thread->title) }}</h5>
-              <h6 class="card-subtitle mb-2 text-muted"></h6>
-              <p class="card-text">{{ \Str::limit($thread->body) }}</p>
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
-          </div>
-        </div>
-      </div>
+<div class="blue-card">    
+  <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+    <div class="card-header">{{ $thread->category->name }}</div>　
+    <div class="card-body">
+      <h5 class="card-title">{{ \Str::limit($thread->title) }}</h5>
+      <p class="card-name">{{ $thread->user->name }}</p>
+      <p class="card-text">{{ \Str::limit($thread->body) }}</p>
+      <a href="#" class="btn btn-primary" class="float-right">さらに詳しく</a>
+    </div>
+  </div>
+</div>
     @endforeach
-</div>
-</div>
 
-                            {{ csrf_field() }}
+
+
+<!--<form action="{{ action('User\ThreadsController@index') }}" method="get">-->
+<!--<div class="container container-m">-->
+<!--  <div class="card-deck">  -->
+    <!--@foreach($threads as $thread)  -->
+<!--      <div class="card-deck" style="width: 18rem;">-->
+<!--        <div class="card">-->
+<!--          <div class="card-body">-->
+              <!--<h5 class="card-title">{{ \Str::limit($thread->title) }}</h5>-->
+<!--              <h6 class="card-subtitle mb-2 text-muted"></h6>-->
+              <!--<p class="card-text">{{ \Str::limit($thread->body) }}</p>-->
+<!--              <a href="#" class="card-link">Card link</a>-->
+<!--              <a href="#" class="card-link">Another link</a>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+    <!--@endforeach-->
+<!--</div>-->
+<!--</div>-->
+
+{{ csrf_field() }}
 
 @endsection   
 

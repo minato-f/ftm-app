@@ -42,6 +42,9 @@ Route::group(['middleware' => 'auth:user'], function() {
     Route::get('threads/create', 'User\ThreadsController@add');
     Route::post('threads/create', 'User\ThreadsController@create');
     
+    Route::post('threads/show', 'User\ThreadsController@show');
+    
+    
     Route::get('threads/edit', 'User\ThreadsController@edit');
     
     Route::get('comments/create', 'User\CommentsController@create');

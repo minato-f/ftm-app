@@ -59,5 +59,13 @@ class ThreadsController extends Controller
   {
       return view('user.threads.edit');
   }
+  
+  public function show(Thread $thread)
+  {
+    $thread->load('caregory', 'user');
+    return view ('user.threads.show', ['thread' => $thread]);
+  }
+  
+  
     
 }

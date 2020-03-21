@@ -75,7 +75,13 @@
 {{-- 青のカードの部分 --}}
 
 <form action="{{ action('User\ThreadsController@index') }}" method="get">
-    @foreach($threads as $thread)  
+  
+for(i = 0; i < 2; i++){
+  if(i % 3 === 0) {
+  <div class="row"></div>
+  
+  
+@foreach($threads as $thread)  
 <div class= "row">
   <div class="col-sm-4">    
     <div class="blue-card">
@@ -91,7 +97,9 @@
     </div>
   </div>
 </div>
-    @endforeach
+@endforeach
+}
+}
 
 
 

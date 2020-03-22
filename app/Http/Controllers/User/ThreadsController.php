@@ -60,8 +60,9 @@ class ThreadsController extends Controller
       return view('user.threads.edit');
   }
   
-  public function show(Thread $thread)
+  public function show(Request $request)
   {
+    $thread = Thread::find($request->id);
     $thread->load('caregory', 'user');
     return view ('user.threads.show', ['thread' => $thread]);
   }

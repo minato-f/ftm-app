@@ -42,67 +42,40 @@
 </div>
 
 
-{{-- カードの部分 --}}
-<div class="container container-m">
-  <div class="card-deck">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
 {{-- 青のカードの部分 --}}
 
 <form action="{{ action('User\ThreadsController@index') }}" method="get">
-  
-for(i = 0; i < 2; i++){
-  if(i % 3 === 0) {
-  <div class="row"></div>
-  
+
+<?php $i = 0; ?>
   
 @foreach($threads as $thread)  
-<div class= "row">
-  <div class="col-sm-4">    
-    <div class="blue-card">
-      <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
-        <div class="card-header">{{ $thread->category->name }}</div>　
-        <div class="card-body">
-          <h5 class="card-title">{{ \Str::limit($thread->title) }}</h5>
-          <p class="card-name">{{ $thread->user->name }}</p>
-          <p class="card-text">{{ \Str::limit($thread->body) }}</p>
-          <a href="#" class="btn btn-primary" class="float-right">さらに詳しく</a>
+  @if(0 == $i % 3)<div class= "row">@endif
+    @if(0 == $i % 3)
+      <div class="col-md-3 offset-md-2">
+    @elseif(1 == $i % 3)
+      <div class="col-md-3">    
+    @else
+      <div class="col-md-3">
+    @endif
+    
+      <div class="blue-card">
+        <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+          <div class="card-header">{{ $thread->category->name }}</div>　
+          <div class="card-body">
+            <h5 class="card-title">{{ \Str::limit($thread->title) }}</h5>
+            <p class="card-name">{{ $thread->user->name }}</p>
+            <p class="card-text">{{ \Str::limit($thread->body) }}</p>
+            <a href="#" class="btn btn-primary" class="float-right">さらに詳しく</a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
+  @if(2 == $i % 3)</div>@endif
+
+<?php $i++; ?>
+
 @endforeach
-}
-}
-
-
-
+  @if(2 != $i % 3)</div>@endif
 
 {{ csrf_field() }}
 
